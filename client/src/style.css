@@ -8,17 +8,17 @@
 
 :root {
   --bg: #000000;
-  --surface: #0a0a0a;
-  --surface-hover: #111111;
+  --surface: #000000;
+  --surface-hover: #0a0a0a;
   --border: #222222;
   --border-hover: #444444;
   --text: #e0e0e0;
-  --text-muted: #666666;
+  --text-muted: #555555;
   --text-bright: #ffffff;
   --accent: #ffffff;
   --danger: #ff3333;
   --warning-bg: #1a1a00;
-  --radius: 2px;
+  --radius: 0px;
 }
 
 body {
@@ -27,13 +27,14 @@ body {
   color: var(--text);
   line-height: 1.7;
   font-size: 13px;
+  text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
 }
 
 .container {
-  max-width: 720px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 20px;
 }
 
 /* Header */
@@ -44,7 +45,6 @@ body {
   top: 0;
   z-index: 10;
   background: var(--bg);
-  backdrop-filter: blur(8px);
 }
 
 .header-inner {
@@ -59,7 +59,6 @@ body {
   color: var(--text-muted);
   text-decoration: none;
   letter-spacing: 0.15em;
-  text-transform: uppercase;
 }
 
 .logo:hover {
@@ -78,7 +77,7 @@ body {
   font-weight: 300;
   margin-bottom: 8px;
   color: var(--text-bright);
-  letter-spacing: -0.02em;
+  letter-spacing: 0.05em;
 }
 
 .hero p {
@@ -89,18 +88,15 @@ body {
 
 /* Cards */
 .card {
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 20px;
-  margin-bottom: 12px;
-  background: var(--surface);
+  padding: 20px 0;
+  margin-bottom: 0;
+  border-bottom: 1px solid var(--border);
 }
 
 .card h2 {
   margin-bottom: 16px;
   font-size: 10px;
   font-weight: 500;
-  text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--text-muted);
 }
@@ -109,7 +105,6 @@ body {
   margin-bottom: 12px;
   font-size: 10px;
   font-weight: 500;
-  text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--text-muted);
 }
@@ -127,7 +122,8 @@ body {
   font-weight: 500;
   cursor: pointer;
   text-decoration: none;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   transition: all 0.15s;
 }
 
@@ -159,7 +155,6 @@ body {
   cursor: pointer;
   color: var(--text-muted);
   padding: 4px 8px;
-  border-radius: var(--radius);
   line-height: 1;
   font-family: 'Roboto Mono', monospace;
 }
@@ -171,14 +166,16 @@ body {
 /* Forms */
 input[type="text"],
 input[type="file"] {
-  padding: 8px 12px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  padding: 8px 0;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
   font-family: 'Roboto Mono', monospace;
   font-size: 13px;
   width: 100%;
-  background: var(--bg);
+  background: transparent;
   color: var(--text);
+  text-transform: uppercase;
   transition: border-color 0.15s;
 }
 
@@ -190,6 +187,7 @@ input[type="text"]:focus {
 input[type="text"]::placeholder {
   color: var(--text-muted);
   opacity: 0.6;
+  text-transform: uppercase;
 }
 
 input[type="file"] {
@@ -199,7 +197,8 @@ input[type="file"] {
 
 .inline-form {
   display: flex;
-  gap: 8px;
+  gap: 12px;
+  align-items: flex-end;
 }
 
 .inline-form input {
@@ -222,7 +221,7 @@ input[type="file"] {
   font-size: 20px;
   font-weight: 300;
   color: var(--text-bright);
-  letter-spacing: -0.01em;
+  letter-spacing: 0.04em;
 }
 
 .subtitle {
@@ -246,23 +245,21 @@ input[type="file"] {
 .user-card {
   display: flex;
   flex-direction: column;
-  padding: 14px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
   text-decoration: none;
   color: var(--text);
-  transition: border-color 0.15s;
-  background: var(--surface);
+  transition: color 0.15s;
 }
 
 .user-card:hover {
-  border-color: var(--border-hover);
+  color: var(--text-bright);
 }
 
 .user-card-name {
   font-weight: 400;
   font-size: 14px;
-  color: var(--text-bright);
+  color: inherit;
 }
 
 .user-card-count {
@@ -278,8 +275,11 @@ input[type="file"] {
 
 .typeahead-input {
   font-size: 14px !important;
-  padding: 12px 14px !important;
-  background: var(--bg) !important;
+  padding: 12px 0 !important;
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid var(--border) !important;
+  border-radius: 0 !important;
 }
 
 .typeahead-dropdown {
@@ -287,10 +287,9 @@ input[type="file"] {
   top: 100%;
   left: 0;
   right: 0;
-  background: var(--surface);
+  background: #0a0a0a;
   border: 1px solid var(--border);
   border-top: none;
-  border-radius: 0 0 var(--radius) var(--radius);
   max-height: 320px;
   overflow-y: auto;
   z-index: 20;
@@ -310,6 +309,7 @@ input[type="file"] {
   cursor: pointer;
   border-bottom: 1px solid var(--border);
   color: var(--text);
+  text-transform: uppercase;
 }
 
 .typeahead-item:hover:not(:disabled) {
@@ -334,10 +334,7 @@ input[type="file"] {
 .typeahead-badge {
   margin-left: auto;
   font-size: 9px;
-  text-transform: uppercase;
   letter-spacing: 0.08em;
-  border: 1px solid var(--border);
-  padding: 2px 6px;
   color: var(--text-muted);
 }
 
@@ -354,23 +351,31 @@ input[type="file"] {
 }
 
 .section {
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  margin-bottom: 6px;
-  background: var(--surface);
+  border: none;
+  margin-bottom: 0;
+  background: transparent;
   overflow: hidden;
 }
 
 .section .section {
-  border-radius: 0;
-  border-left: none;
-  border-right: none;
-  border-bottom: none;
   margin-bottom: 0;
 }
 
-.section .section:last-child {
-  border-bottom: none;
+/* Depth-based indentation */
+.section-depth-0 {
+  border-bottom: 1px solid var(--border);
+}
+
+.section-depth-1 > .section-header {
+  padding-left: 24px;
+}
+
+.section-depth-1 > .section-body {
+  padding-left: 0;
+}
+
+.section-depth-2 > .section-header {
+  padding-left: 48px;
 }
 
 .section-header {
@@ -378,7 +383,7 @@ input[type="file"] {
   align-items: center;
   gap: 8px;
   width: 100%;
-  padding: 10px 14px;
+  padding: 10px 0;
   background: none;
   border: none;
   font-family: 'Roboto Mono', monospace;
@@ -387,10 +392,11 @@ input[type="file"] {
   cursor: pointer;
   text-align: left;
   color: var(--text);
+  text-transform: uppercase;
 }
 
 .section-header:hover {
-  background: var(--surface-hover);
+  color: var(--text-bright);
 }
 
 .section-arrow {
@@ -401,20 +407,18 @@ input[type="file"] {
 
 .section-title {
   flex: 1;
-  color: var(--text-bright);
+  color: inherit;
 }
 
 .section-count {
   font-size: 10px;
   font-weight: 400;
   color: var(--text-muted);
-  border: 1px solid var(--border);
-  padding: 1px 7px;
   letter-spacing: 0.02em;
 }
 
 .section-body {
-  border-top: 1px solid var(--border);
+  border-top: none;
 }
 
 /* City card */
@@ -422,12 +426,11 @@ input[type="file"] {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 8px 14px 8px 36px;
-  border-bottom: 1px solid var(--border);
+  padding: 6px 0 6px 48px;
 }
 
-.city-card:last-child {
-  border-bottom: none;
+.section-depth-2 .city-card {
+  padding-left: 72px;
 }
 
 .city-card-info {
@@ -464,7 +467,6 @@ input[type="file"] {
 .import-table th {
   font-weight: 500;
   font-size: 9px;
-  text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--text-muted);
 }
@@ -542,7 +544,19 @@ input[type="file"] {
   }
 
   .city-card {
-    padding-left: 14px;
+    padding-left: 24px;
+  }
+
+  .section-depth-2 .city-card {
+    padding-left: 36px;
+  }
+
+  .section-depth-1 > .section-header {
+    padding-left: 16px;
+  }
+
+  .section-depth-2 > .section-header {
+    padding-left: 32px;
   }
 
   .hero {
@@ -564,5 +578,10 @@ input[type="file"] {
   .import-table th,
   .import-table td {
     padding: 6px 6px;
+  }
+
+  input[type="text"],
+  .typeahead-input {
+    font-size: 16px !important;
   }
 }

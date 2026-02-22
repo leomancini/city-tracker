@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import CityCard from './CityCard.jsx'
 
-function Section({ title, count, children, defaultOpen = true }) {
+function Section({ title, count, children, defaultOpen = false, depth = 0 }) {
   const [open, setOpen] = useState(defaultOpen)
   return (
-    <div className="section">
+    <div className={`section section-depth-${depth}`}>
       <button className="section-header" onClick={() => setOpen(!open)}>
         <span className="section-arrow">{open ? '▾' : '▸'}</span>
         <span className="section-title">{title}</span>
@@ -32,12 +32,12 @@ export default function CityGroupedList({ data, onRemove }) {
       {data.continents.map(continent => {
         const continentCount = continent.countries.reduce((sum, c) => sum + countCities(c), 0)
         return (
-          <Section key={continent.code} title={continent.name} count={continentCount}>
+          <Section key={continent.code} title={continent.name} count={continentCount} depth={0}>
             {continent.countries.map(country => (
-              <Section key={country.code} title={`${country.name}`} count={countCities(country)}>
+              <Section key={country.code} title={country.name} count={countCities(country)} depth={1}>
                 {country.states ? (
                   country.states.map(state => (
-                    <Section key={state.code} title={state.name} count={state.cities.length} defaultOpen={false}>
+                    <Section key={state.code} title={state.name} count={state.cities.length} depth={2}>
                       {state.cities.map(city => (
                         <CityCard key={city.id} city={city} onRemove={onRemove} />
                       ))}
