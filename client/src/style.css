@@ -374,16 +374,8 @@ input[type="file"] {
   border-bottom: 1px solid var(--border);
 }
 
-.section-depth-1 > .section-header {
+.section-body {
   padding-left: 28px;
-}
-
-.section-depth-1 > .section-body {
-  padding-left: 0;
-}
-
-.section-depth-2 > .section-header {
-  padding-left: 56px;
 }
 
 .section-header {
@@ -408,16 +400,25 @@ input[type="file"] {
 }
 
 .section-arrow {
-  color: var(--text-muted);
-  font-size: 22px;
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   transition: transform 0.15s;
   transform-origin: center center;
-  line-height: 1;
+}
+
+.section-arrow::before {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--text-muted);
+  border-bottom: 2px solid var(--text-muted);
+  transform: rotate(-45deg);
+  margin-left: -3px;
 }
 
 .section-arrow-open {
@@ -436,20 +437,12 @@ input[type="file"] {
   letter-spacing: 0.02em;
 }
 
-.section-body {
-  border-top: none;
-}
-
 /* City card */
 .city-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 7px 0 7px 64px;
-}
-
-.section-depth-2 .city-card {
-  padding-left: 92px;
+  padding: 7px 0 7px 30px;
 }
 
 .city-card-info {
@@ -562,20 +555,12 @@ input[type="file"] {
     flex-direction: column;
   }
 
-  .city-card {
-    padding-left: 48px;
-  }
-
-  .section-depth-2 .city-card {
-    padding-left: 68px;
-  }
-
-  .section-depth-1 > .section-header {
+  .section-body {
     padding-left: 20px;
   }
 
-  .section-depth-2 > .section-header {
-    padding-left: 40px;
+  .city-card {
+    padding-left: 24px;
   }
 
   .hero {
