@@ -1,0 +1,9 @@
+{
+  "service_id": "city-tracker",
+  "service_name": "City Tracker",
+  "domain": "https://city-tracker.noshado.ws",
+  "host": "localhost",
+  "port": "3121",
+  "author": "leo",
+  "created_on": "Sun 22 Feb 2026 02:48:56 AM EST"
+}
