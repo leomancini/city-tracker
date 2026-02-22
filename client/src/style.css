@@ -409,12 +409,15 @@ input[type="file"] {
 
 .section-arrow {
   color: var(--text-muted);
-  font-size: 18px;
-  width: 18px;
+  font-size: 22px;
+  width: 22px;
+  height: 22px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.15s;
+  transform-origin: center center;
+  line-height: 1;
 }
 
 .section-arrow-open {
@@ -560,11 +563,11 @@ input[type="file"] {
   }
 
   .city-card {
-    padding-left: 28px;
+    padding-left: 48px;
   }
 
   .section-depth-2 .city-card {
-    padding-left: 42px;
+    padding-left: 68px;
   }
 
   .section-depth-1 > .section-header {
