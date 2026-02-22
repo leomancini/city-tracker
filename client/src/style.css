@@ -169,6 +169,7 @@ button, a {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  transform: scale(1.4);
 }
 
 .btn-icon:hover {
