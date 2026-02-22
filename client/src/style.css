@@ -383,6 +383,10 @@ input[type="file"] {
   padding-left: 28px;
 }
 
+.section-depth-1 > .section-body {
+  padding-left: 38px;
+}
+
 .section-header {
   display: flex;
   align-items: center;
@@ -452,7 +456,7 @@ input[type="file"] {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 7px 0 7px 46px;
+  padding: 7px 0 7px 36px;
 }
 
 .city-card-info {
@@ -569,8 +573,12 @@ input[type="file"] {
     padding-left: 20px;
   }
 
+  .section-depth-1 > .section-body {
+    padding-left: 30px;
+  }
+
   .city-card {
-    padding-left: 40px;
+    padding-left: 30px;
   }
 
   .hero {
