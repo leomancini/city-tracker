@@ -1,12 +1,18 @@
 import { useState } from 'react'
 import CityCard from './CityCard.jsx'
 
-function Section({ title, count, children, defaultOpen = false, depth = 0 }) {
+function countryFlag(code) {
+  if (!code || code.length !== 2) return ''
+  return String.fromCodePoint(...[...code.toUpperCase()].map(c => 0x1F1E6 + c.charCodeAt(0) - 65))
+}
+
+function Section({ title, flag, count, children, defaultOpen = false, depth = 0 }) {
   const [open, setOpen] = useState(defaultOpen)
   return (
     <div className={`section section-depth-${depth}`}>
       <button className="section-header" onClick={() => setOpen(!open)}>
         <span className={`section-arrow${open ? ' section-arrow-open' : ''}`} />
+        {flag && <span className="section-flag">{flag}</span>}
         <span className="section-title">{title}</span>
         <span className="section-count">{count}</span>
       </button>
@@ -34,7 +40,7 @@ export default function CityGroupedList({ data, onRemove }) {
         return (
           <Section key={continent.code} title={continent.name} count={continentCount} depth={0}>
             {continent.countries.map(country => (
-              <Section key={country.code} title={country.name} count={countCities(country)} depth={1}>
+              <Section key={country.code} title={country.name} flag={countryFlag(country.code)} count={countCities(country)} depth={1}>
                 {country.states ? (
                   country.states.map(state => (
                     <Section key={state.code} title={state.name} count={state.cities.length} depth={2}>

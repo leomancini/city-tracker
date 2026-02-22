@@ -22,7 +22,21 @@ export default function UserCities() {
   async function handleRemove(cityId) {
     try {
       await removeCity(username, cityId)
-      load()
+      setData(prev => {
+        if (!prev) return prev
+        const continents = prev.continents.map(cont => ({
+          ...cont,
+          countries: cont.countries.map(country => ({
+            ...country,
+            cities: country.cities?.filter(c => c.id !== cityId),
+            states: country.states?.map(state => ({
+              ...state,
+              cities: state.cities.filter(c => c.id !== cityId),
+            })).filter(s => s.cities.length > 0),
+          })).filter(c => (c.cities?.length || 0) + (c.states?.length || 0) > 0),
+        })).filter(cont => cont.countries.length > 0)
+        return { ...prev, totalCities: prev.totalCities - 1, continents }
+      })
     } catch (err) {
       setError(err.message)
     }

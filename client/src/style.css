@@ -159,12 +159,16 @@ button, a {
 .btn-icon {
   background: none;
   border: none;
-  font-size: 14px;
+  font-size: 20px;
   cursor: pointer;
   color: var(--text-muted);
   padding: 4px 8px;
   line-height: 1;
   font-family: 'Roboto Mono', monospace;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .btn-icon:hover {
@@ -423,6 +427,11 @@ input[type="file"] {
 
 .section-arrow-open {
   transform: rotate(90deg);
+}
+
+.section-flag {
+  font-size: 16px;
+  line-height: 1;
 }
 
 .section-title {
