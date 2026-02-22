@@ -26,7 +26,7 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.7;
-  font-size: 13px;
+  font-size: 14px;
   text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
 }
@@ -367,7 +367,7 @@ input[type="file"] {
 }
 
 .section-depth-1 > .section-header {
-  padding-left: 24px;
+  padding-left: 28px;
 }
 
 .section-depth-1 > .section-body {
@@ -375,20 +375,20 @@ input[type="file"] {
 }
 
 .section-depth-2 > .section-header {
-  padding-left: 48px;
+  padding-left: 56px;
 }
 
 .section-header {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   width: 100%;
-  padding: 10px 0;
+  padding: 11px 0;
   background: none;
   border: none;
   font-family: 'Roboto Mono', monospace;
-  font-size: 12px;
-  font-weight: 400;
+  font-size: 14px;
+  font-weight: 600;
   cursor: pointer;
   text-align: left;
   color: var(--text);
@@ -401,8 +401,13 @@ input[type="file"] {
 
 .section-arrow {
   color: var(--text-muted);
-  font-size: 10px;
-  width: 14px;
+  font-size: 18px;
+  width: 18px;
+  transition: transform 0.15s;
+}
+
+.section-arrow-open {
+  transform: rotate(90deg);
 }
 
 .section-title {
@@ -411,7 +416,7 @@ input[type="file"] {
 }
 
 .section-count {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 400;
   color: var(--text-muted);
   letter-spacing: 0.02em;
@@ -426,11 +431,11 @@ input[type="file"] {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 6px 0 6px 48px;
+  padding: 7px 0 7px 56px;
 }
 
 .section-depth-2 .city-card {
-  padding-left: 72px;
+  padding-left: 84px;
 }
 
 .city-card-info {
@@ -440,8 +445,8 @@ input[type="file"] {
 }
 
 .city-card-name {
-  font-weight: 400;
-  font-size: 12px;
+  font-weight: 600;
+  font-size: 14px;
   color: var(--text);
 }
 
@@ -544,19 +549,19 @@ input[type="file"] {
   }
 
   .city-card {
-    padding-left: 24px;
+    padding-left: 28px;
   }
 
   .section-depth-2 .city-card {
-    padding-left: 36px;
+    padding-left: 42px;
   }
 
   .section-depth-1 > .section-header {
-    padding-left: 16px;
+    padding-left: 20px;
   }
 
   .section-depth-2 > .section-header {
-    padding-left: 32px;
+    padding-left: 40px;
   }
 
   .hero {

@@ -6,7 +6,7 @@ function Section({ title, count, children, defaultOpen = false, depth = 0 }) {
   return (
     <div className={`section section-depth-${depth}`}>
       <button className="section-header" onClick={() => setOpen(!open)}>
-        <span className="section-arrow">{open ? '▾' : '▸'}</span>
+        <span className={`section-arrow${open ? ' section-arrow-open' : ''}`}>›</span>
         <span className="section-title">{title}</span>
         <span className="section-count">{count}</span>
       </button>
