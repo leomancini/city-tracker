@@ -27,7 +27,7 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.7;
-  font-size: 14px;
+  font-size: 15px;
   text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
   -webkit-touch-callout: none;
@@ -62,7 +62,7 @@ button, a {
 }
 
 .logo {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 400;
   color: var(--text-muted);
   text-decoration: none;
@@ -81,7 +81,7 @@ button, a {
 }
 
 .hero h1 {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 300;
   margin-bottom: 8px;
   color: var(--text-bright);
@@ -90,7 +90,7 @@ button, a {
 
 .hero p {
   color: var(--text-muted);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 300;
 }
 
@@ -103,7 +103,7 @@ button, a {
 
 .card h2 {
   margin-bottom: 16px;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.12em;
   color: var(--text-muted);
@@ -111,7 +111,7 @@ button, a {
 
 .card h3 {
   margin-bottom: 12px;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.1em;
   color: var(--text-muted);
@@ -126,7 +126,7 @@ button, a {
   border: 1px solid var(--text-bright);
   border-radius: var(--radius);
   font-family: 'Roboto Mono', monospace;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
   cursor: pointer;
   text-decoration: none;
@@ -159,7 +159,7 @@ button, a {
 .btn-icon {
   background: none;
   border: none;
-  font-size: 14px;
+  font-size: 15px;
   cursor: pointer;
   color: var(--text-muted);
   padding: 4px 0;
@@ -184,7 +184,7 @@ input[type="file"] {
   border-bottom: 1px solid var(--border);
   border-radius: 0;
   font-family: 'Roboto Mono', monospace;
-  font-size: 13px;
+  font-size: 14px;
   width: 100%;
   background: transparent;
   color: var(--text);
@@ -204,7 +204,7 @@ input[type="text"]::placeholder {
 }
 
 input[type="file"] {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-muted);
 }
 
@@ -231,7 +231,7 @@ input[type="file"] {
 }
 
 .page-header h1 {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   color: var(--text-bright);
   letter-spacing: 0.04em;
@@ -239,7 +239,7 @@ input[type="file"] {
 
 .subtitle {
   color: var(--text-muted);
-  font-size: 11px;
+  font-size: 12px;
   margin-top: 4px;
 }
 
@@ -271,13 +271,13 @@ input[type="file"] {
 
 .user-card-name {
   font-weight: 400;
-  font-size: 14px;
+  font-size: 15px;
   color: inherit;
 }
 
 .user-card-count {
   color: var(--text-muted);
-  font-size: 11px;
+  font-size: 12px;
   margin-top: 2px;
 }
 
@@ -287,7 +287,7 @@ input[type="file"] {
 }
 
 .typeahead-input {
-  font-size: 14px !important;
+  font-size: 15px !important;
   padding: 12px 0 !important;
   background: transparent !important;
   border: none !important;
@@ -318,7 +318,7 @@ input[type="file"] {
   background: none;
   text-align: left;
   font-family: 'Roboto Mono', monospace;
-  font-size: 12px;
+  font-size: 13px;
   cursor: pointer;
   border-bottom: 1px solid var(--border);
   color: var(--text);
@@ -341,12 +341,12 @@ input[type="file"] {
 
 .typeahead-location {
   color: var(--text-muted);
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .typeahead-badge {
   margin-left: auto;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.08em;
   color: var(--text-muted);
 }
@@ -355,7 +355,7 @@ input[type="file"] {
 .typeahead-empty {
   color: var(--text-muted);
   cursor: default;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 /* Grouped list / sections */
@@ -396,7 +396,7 @@ input[type="file"] {
   background: none;
   border: none;
   font-family: 'Roboto Mono', monospace;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   text-align: left;
@@ -435,7 +435,7 @@ input[type="file"] {
 }
 
 .section-flag {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1;
 }
 
@@ -445,7 +445,7 @@ input[type="file"] {
 }
 
 .section-count {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   color: var(--text-muted);
   letter-spacing: 0.02em;
@@ -467,20 +467,20 @@ input[type="file"] {
 
 .city-card-name {
   font-weight: 600;
-  font-size: 14px;
+  font-size: 15px;
   color: var(--text);
 }
 
 .city-card-date {
   color: var(--text-muted);
-  font-size: 10px;
+  font-size: 11px;
 }
 
 /* Import table */
 .import-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .import-table th,
@@ -492,7 +492,7 @@ input[type="file"] {
 
 .import-table th {
   font-weight: 500;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.1em;
   color: var(--text-muted);
 }
@@ -523,7 +523,7 @@ input[type="file"] {
 .recent-list li {
   padding: 6px 0;
   border-bottom: 1px solid var(--border);
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text);
 }
 
@@ -534,15 +534,21 @@ input[type="file"] {
 /* Utilities */
 .error {
   color: var(--danger);
-  font-size: 11px;
+  font-size: 12px;
   margin-top: 8px;
+}
+
+.loading {
+  color: var(--text-muted);
+  padding: 48px 0;
+  font-size: 13px;
 }
 
 .empty {
   color: var(--text-muted);
   text-align: center;
   padding: 32px 0;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 /* Responsive */
@@ -594,7 +600,7 @@ input[type="file"] {
   }
 
   .import-table {
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .import-table th,
