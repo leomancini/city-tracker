@@ -4,4 +4,4 @@ node_modules/
 output.log
 raw/
 client-dist/
-
+data/users/
