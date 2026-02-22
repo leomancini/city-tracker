@@ -456,7 +456,7 @@ input[type="file"] {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 7px 0 7px 36px;
+  padding: 7px 0 7px 23px;
 }
 
 .city-card-info {
@@ -584,7 +584,7 @@ input[type="file"] {
   }
 
   .city-card {
-    padding-left: 30px;
+    padding-left: 31px;
   }
 
   .hero {
