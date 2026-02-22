@@ -440,7 +440,7 @@ input[type="file"] {
 }
 
 .section-count {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
   color: var(--text-muted);
   letter-spacing: 0.02em;
@@ -451,7 +451,7 @@ input[type="file"] {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 7px 0 7px 30px;
+  padding: 7px 0 7px 46px;
 }
 
 .city-card-info {
@@ -569,7 +569,7 @@ input[type="file"] {
   }
 
   .city-card {
-    padding-left: 24px;
+    padding-left: 40px;
   }
 
   .hero {
