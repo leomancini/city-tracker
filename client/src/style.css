@@ -437,6 +437,11 @@ input[type="file"] {
 .section-flag {
   font-size: 18px;
   line-height: 1;
+  width: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .section-title {
@@ -456,7 +461,7 @@ input[type="file"] {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 7px 0 7px 23px;
+  padding: 7px 0 7px 26px;
 }
 
 .city-card-info {
@@ -584,7 +589,7 @@ input[type="file"] {
   }
 
   .city-card {
-    padding-left: 31px;
+    padding-left: 34px;
   }
 
   .hero {
