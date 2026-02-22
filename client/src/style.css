@@ -159,10 +159,10 @@ button, a {
 .btn-icon {
   background: none;
   border: none;
-  font-size: 20px;
+  font-size: 14px;
   cursor: pointer;
   color: var(--text-muted);
-  padding: 4px 8px;
+  padding: 4px 0;
   line-height: 1;
   font-family: 'Roboto Mono', monospace;
   display: inline-flex;
