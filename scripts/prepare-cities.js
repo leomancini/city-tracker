@@ -73,9 +73,10 @@ for (const [id, candidates] of englishCandidates) {
 
 console.log(`Found English names for ${englishNames.size} cities`);
 
-// Step 3: Apply English names
+// Step 3: Apply English names (skip China — keep original names)
 let renamed = 0;
 for (const city of cities) {
+  if (city.country === 'CN') continue;
   const en = englishNames.get(city.id);
   if (en && en.name !== city.name) {
     city.name = en.name;
