@@ -20,7 +20,7 @@ function formatCity(city) {
 }
 
 async function searchGeoNames(q, maxRows) {
-  const url = `http://api.geonames.org/searchJSON?q=${encodeURIComponent(q)}&maxRows=${maxRows}&featureClass=P&style=MEDIUM&username=${GEONAMES_USER}`;
+  const url = `http://api.geonames.org/searchJSON?q=${encodeURIComponent(q)}&maxRows=${maxRows}&featureClass=P&style=MEDIUM&lang=en&username=${GEONAMES_USER}`;
   const res = await fetch(url);
   if (!res.ok) return [];
   const data = await res.json();
