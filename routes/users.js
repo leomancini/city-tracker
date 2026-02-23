@@ -1,10 +1,29 @@
 import { Router } from 'express';
-import { listUsers, getUser, createUser, saveUser, getCityById } from '../lib/store.js';
+import { listUsers, getUser, createUser, saveUser, getCityById, addCityToStore, saveCustomCity } from '../lib/store.js';
 import { groupCities, enrichCity } from '../lib/grouping.js';
 
 const router = Router();
 
 const USERNAME_RE = /^[a-z0-9][a-z0-9-]{1,28}[a-z0-9]$/;
+const GEONAMES_USER = process.env.GEONAMES_USERNAME || 'demo';
+
+async function fetchCityFromGeoNames(geonameId) {
+  const url = `http://api.geonames.org/getJSON?geonameId=${geonameId}&username=${GEONAMES_USER}`;
+  const res = await fetch(url);
+  if (!res.ok) return null;
+  const g = await res.json();
+  if (!g.geonameId) return null;
+  return {
+    id: g.geonameId,
+    name: g.name,
+    ascii: g.asciiName || g.name,
+    country: g.countryCode,
+    admin1: g.adminCode1 || '',
+    lat: parseFloat(g.lat),
+    lng: parseFloat(g.lng),
+    population: g.population || 0,
+  };
+}
 
 router.get('/', async (req, res) => {
   const usernames = await listUsers();
@@ -41,7 +60,17 @@ router.post('/:username/cities', async (req, res) => {
   const { cityId } = req.body;
   if (!cityId) return res.status(400).json({ error: 'cityId is required' });
 
-  const city = getCityById(cityId);
+  let city = getCityById(cityId);
+  if (!city) {
+    // Try fetching from GeoNames API
+    try {
+      city = await fetchCityFromGeoNames(cityId);
+      if (city) {
+        addCityToStore(city);
+        await saveCustomCity(city);
+      }
+    } catch {}
+  }
   if (!city) return res.status(404).json({ error: 'City not found' });
 
   if (user.cities.some(c => c.cityId === cityId)) {

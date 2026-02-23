@@ -5,8 +5,8 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node /home/leo/services/city-tracker/server.js",
-    "dev": "concurrently \"nodemon --ignore data/users/ --ignore client/ --ignore client-dist/ server.js\" \"cd client && npm run dev\"",
+    "start": "node --env-file=.env /home/leo/services/city-tracker/server.js",
+    "dev": "concurrently \"nodemon --ignore data/users/ --ignore client/ --ignore client-dist/ --exec 'node --env-file=.env' server.js\" \"cd client && npm run dev\"",
     "build": "cd client && npm run build"
   },
   "author": "",
