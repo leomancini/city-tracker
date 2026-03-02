@@ -6,3 +6,4 @@ raw/
 client-dist/
 data/users/
 data/custom-cities.json
+.claude/*
