@@ -260,8 +260,8 @@ input[type="file"] {
 }
 
 .back-btn {
-  margin-top: 38px;
-  margin-bottom: 35px;
+  margin-top: 32px;
+  margin-bottom: 16px;
 }
 
 .page-actions {
@@ -335,7 +335,8 @@ input[type="file"] {
   align-items: center;
   gap: 10px;
   width: 100%;
-  padding: 10px 12px;
+  height: 38px;
+  padding: 0 12px;
   border: none;
   background: none;
   text-align: left;
@@ -366,10 +367,9 @@ input[type="file"] {
   cursor: not-allowed;
 }
 
-.typeahead-disabled .typeahead-city,
-.typeahead-disabled .typeahead-location,
 .typeahead-disabled .typeahead-badge {
-  opacity: 0.35;
+  color: var(--text-muted);
+  font-weight: 600;
 }
 
 .typeahead-city {
@@ -398,7 +398,8 @@ input[type="file"] {
 .typeahead-empty {
   color: var(--text-muted);
   cursor: default;
-  font-size: 12px;
+  font-size: 15px;
+  font-weight: 400;
 }
 
 /* Grouped list / sections */
@@ -577,11 +578,11 @@ input[type="file"] {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 12px;
+  height: 38px;
+  padding: 0 12px;
   border-bottom: 1px solid var(--border);
   font-size: 15px;
   font-weight: 600;
-  line-height: 1;
   color: var(--text);
 }
 
