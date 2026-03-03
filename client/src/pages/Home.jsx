@@ -38,9 +38,10 @@ export default function Home() {
       </section>
 
       <section className="card">
-        <form onSubmit={handleSubmit} className="inline-form">
+        <form onSubmit={handleSubmit} className="inline-form" role="search">
           <input
-            type="text"
+            type="search"
+            name="city-tracker-search"
             value={username}
             onChange={e => setUsername(e.target.value)}
             placeholder="username"
