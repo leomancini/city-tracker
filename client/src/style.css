@@ -261,7 +261,7 @@ input[type="file"] {
 
 .back-btn {
   margin-top: 38px;
-  margin-bottom: 31px;
+  margin-bottom: 35px;
 }
 
 .page-actions {
@@ -363,18 +363,28 @@ input[type="file"] {
 }
 
 .typeahead-disabled {
-  opacity: 0.35;
   cursor: not-allowed;
+}
+
+.typeahead-disabled .typeahead-city,
+.typeahead-disabled .typeahead-location,
+.typeahead-disabled .typeahead-badge {
+  opacity: 0.35;
 }
 
 .typeahead-city {
   font-weight: 600;
   color: var(--text-bright);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .typeahead-location {
   color: var(--text-muted);
   font-size: 15px;
+  font-weight: 400;
+  flex-shrink: 0;
 }
 
 .typeahead-badge {
@@ -560,12 +570,18 @@ input[type="file"] {
 /* Recently added list */
 .recent-list {
   list-style: none;
+  border: 1px solid var(--border);
 }
 
 .recent-list li {
-  padding: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
   border-bottom: 1px solid var(--border);
-  font-size: 13px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
   color: var(--text);
 }
 

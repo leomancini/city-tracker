@@ -56,7 +56,10 @@ export default function AddCity() {
           <h3>Just Added</h3>
           <ul className="recent-list">
             {recentlyAdded.map(city => (
-              <li key={city.id}>{city.name}, {city.countryName}</li>
+              <li key={city.id}>
+                <span className="typeahead-city">{city.name}</span>
+                <span className="typeahead-location">{city.countryName}</span>
+              </li>
             ))}
           </ul>
         </section>
