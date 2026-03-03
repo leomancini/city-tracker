@@ -30,7 +30,7 @@ function countCities(country) {
 
 export default function CityGroupedList({ data, onRemove }) {
   if (!data || data.totalCities === 0) {
-    return <p className="empty">No cities yet. Start adding some!</p>
+    return null
   }
 
   return (

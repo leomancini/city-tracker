@@ -232,7 +232,7 @@ input[type="file"] {
   padding: 32px 0 12px;
   gap: 16px;
   flex-wrap: wrap;
-  border-bottom: 1px solid var(--border);
+  border-bottom: none;
   margin-bottom: 0;
 }
 
@@ -252,7 +252,7 @@ input[type="file"] {
 }
 
 .back-btn {
-  margin-top: 24px;
+  margin-top: 38px;
   margin-bottom: -12px;
 }
 
@@ -317,16 +317,9 @@ input[type="file"] {
 }
 
 .typeahead-dropdown {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
   background: #0a0a0a;
   border: 1px solid var(--border);
   border-top: none;
-  max-height: 320px;
-  overflow-y: auto;
-  z-index: 20;
 }
 
 .typeahead-item {
@@ -334,20 +327,31 @@ input[type="file"] {
   align-items: center;
   gap: 10px;
   width: 100%;
-  padding: 10px 14px;
+  padding: 10px 12px;
   border: none;
   background: none;
   text-align: left;
   font-family: 'Roboto Mono', monospace;
-  font-size: 13px;
+  font-size: 14px;
   cursor: pointer;
   border-bottom: 1px solid var(--border);
   color: var(--text);
   text-transform: uppercase;
 }
 
+.typeahead-item:last-child {
+  border-bottom: none;
+}
+
 .typeahead-item:hover:not(:disabled) {
-  background: var(--surface-hover);
+  background: var(--text-bright);
+  color: #000;
+}
+
+.typeahead-item:hover:not(:disabled) .typeahead-city,
+.typeahead-item:hover:not(:disabled) .typeahead-location,
+.typeahead-item:hover:not(:disabled) .typeahead-badge {
+  color: #000;
 }
 
 .typeahead-disabled {
@@ -356,13 +360,13 @@ input[type="file"] {
 }
 
 .typeahead-city {
-  font-weight: 400;
+  font-weight: 600;
   color: var(--text-bright);
 }
 
 .typeahead-location {
   color: var(--text-muted);
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .typeahead-badge {
@@ -398,6 +402,10 @@ input[type="file"] {
 /* Depth-based indentation */
 .section-depth-0 {
   border-bottom: 1px solid var(--border);
+}
+
+.section-depth-0:last-child {
+  border-bottom: none;
 }
 
 .section-body {

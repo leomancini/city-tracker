@@ -2,11 +2,7 @@ import { useRef, useState } from 'react'
 import { useCitySearch } from '../hooks/useCitySearch.js'
 
 function formatLocation(city) {
-  const parts = [city.countryName]
-  if (city.admin1Name && city.admin1Name !== city.admin1) {
-    parts.unshift(city.admin1Name)
-  }
-  return parts.join(', ')
+  return city.countryName
 }
 
 export default function CityTypeahead({ onSelect, existingCityIds = [] }) {
