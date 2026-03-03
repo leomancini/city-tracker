@@ -595,7 +595,7 @@ input[type="file"] {
     flex-direction: column;
     padding: 20px 0 8px;
     border-bottom: none;
-    margin-bottom: 0;
+    margin-bottom: 12px;
   }
 
   .page-actions {
