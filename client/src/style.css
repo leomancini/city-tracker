@@ -100,6 +100,10 @@ button, a {
   margin-bottom: 0;
 }
 
+.page-header + .card {
+  padding-top: 10px;
+}
+
 .card h2 {
   margin-bottom: 16px;
   font-size: 15px;
@@ -257,7 +261,7 @@ input[type="file"] {
 
 .back-btn {
   margin-top: 38px;
-  margin-bottom: 12px;
+  margin-bottom: 31px;
 }
 
 .page-actions {
