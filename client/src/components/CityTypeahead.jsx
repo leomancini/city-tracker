@@ -26,7 +26,7 @@ export default function CityTypeahead({ onSelect, existingCityIds = [] }) {
         value={query}
         onChange={e => { setQuery(e.target.value); setOpen(true) }}
         onFocus={() => setOpen(true)}
-        placeholder="Search for a city..."
+        placeholder="search..."
         className="typeahead-input"
         autoComplete="off"
       />

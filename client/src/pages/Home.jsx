@@ -34,7 +34,7 @@ export default function Home() {
     <div>
       <section className="hero">
         <h1>City Tracker</h1>
-        <p>Make a list of the cities you've visited</p>
+        <p>Make lists of cities</p>
       </section>
 
       <section className="card">
