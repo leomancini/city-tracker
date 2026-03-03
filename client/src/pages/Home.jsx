@@ -44,7 +44,7 @@ export default function Home() {
             name="city-tracker-search"
             value={username}
             onChange={e => setUsername(e.target.value)}
-            placeholder="username"
+            placeholder="enter a name..."
             pattern="[a-z0-9][a-z0-9-]{1,28}[a-z0-9]"
             title="3-30 chars, lowercase letters, numbers, and hyphens"
             required
