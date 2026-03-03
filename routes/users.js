@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { listUsers, getUser, createUser, saveUser, getCityById, addCityToStore, saveCustomCity } from '../lib/store.js';
+import { listUsers, getUser, createUser, saveUser, getCityById, addCityToStore } from '../lib/store.js';
 import { groupCities, enrichCity } from '../lib/grouping.js';
 
 const router = Router();
@@ -67,7 +67,6 @@ router.post('/:username/cities', async (req, res) => {
       city = await fetchCityFromGeoNames(cityId);
       if (city) {
         addCityToStore(city);
-        await saveCustomCity(city);
       }
     } catch {}
   }

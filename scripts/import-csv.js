@@ -1,7 +1,7 @@
 import { readFileSync } from 'fs';
-import { join, dirname } from 'path';
+import { dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { loadData, createUser, getUser, saveUser, getCitiesArray } from '../lib/store.js';
+import { loadData, createUser, getUser, saveUser } from '../lib/store.js';
 import { findNearestCity } from '../lib/geo.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -26,7 +26,6 @@ if (!user) {
 const csv = readFileSync(csvPath, 'utf-8');
 const lines = csv.trim().split('\n').slice(1); // skip header
 
-const cities = getCitiesArray();
 const matched = new Map(); // cityId -> { city, sources[] }
 let noMatch = 0;
 
@@ -39,7 +38,7 @@ for (const line of lines) {
   const nameMatch = line.match(/\),(.+?)(?:,|$)/);
   const placeName = nameMatch ? nameMatch[1].trim() : 'Unknown';
 
-  const result = findNearestCity(lat, lng, cities, 100);
+  const result = findNearestCity(lat, lng, 100);
   if (result.city && result.withinThreshold) {
     if (!matched.has(result.city.id)) {
       matched.set(result.city.id, { city: result.city, sources: [] });

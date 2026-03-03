@@ -1,5 +1,6 @@
 import { Router } from 'express';
-import { getCitiesArray, getCountryName, getAdmin1Name } from '../lib/store.js';
+import { getCountryName, getAdmin1Name } from '../lib/store.js';
+import { stmts } from '../lib/db.js';
 
 const router = Router();
 
@@ -38,24 +39,16 @@ async function searchGeoNames(q, maxRows) {
 }
 
 router.get('/search', async (req, res) => {
-  const q = (req.query.q || '').toLowerCase().trim();
+  const q = (req.query.q || '').trim();
   const limit = Math.min(parseInt(req.query.limit) || 10, 50);
   if (!q || q.length < 2) return res.json([]);
 
-  const cities = getCitiesArray();
-  const results = [];
-  const seenIds = new Set();
+  const startsPattern = `${q}%`;
+  const containsPattern = `%${q}%`;
+  const rows = stmts.search.all(startsPattern, startsPattern, containsPattern, containsPattern, limit);
 
-  for (const city of cities) {
-    if (results.length >= limit) break;
-    const nameLower = city.name.toLowerCase();
-    const asciiLower = city.ascii.toLowerCase();
-    if (nameLower.startsWith(q) || asciiLower.startsWith(q) ||
-        nameLower.includes(q) || asciiLower.includes(q)) {
-      results.push(formatCity(city));
-      seenIds.add(city.id);
-    }
-  }
+  const results = rows.map(formatCity);
+  const seenIds = new Set(rows.map(r => r.id));
 
   // GeoNames API fallback when local results are insufficient
   if (results.length < limit) {

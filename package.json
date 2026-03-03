@@ -7,13 +7,15 @@
   "scripts": {
     "start": "node --env-file=.env /home/leo/services/city-tracker/server.js",
     "dev": "concurrently \"nodemon --ignore data/users/ --ignore client/ --ignore client-dist/ --exec 'node --env-file=.env' server.js\" \"cd client && npm run dev\"",
-    "build": "cd client && npm run build"
+    "build": "cd client && npm run build",
+    "build:db": "node scripts/build-db.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@tmcw/togeojson": "^7.1.2",
     "@xmldom/xmldom": "^0.8.11",
+    "better-sqlite3": "^12.6.2",
     "cors": "^2.8.6",
     "express": "^4.19.2",
     "multer": "^2.0.2"
