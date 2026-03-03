@@ -118,8 +118,11 @@ button, a {
 
 /* Buttons */
 .btn {
-  display: inline-block;
-  padding: 10px 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  padding: 0 16px;
   background: transparent;
   color: var(--text-bright);
   border: 1px solid var(--text-bright);
@@ -186,7 +189,8 @@ button, a {
 /* Forms */
 input[type="text"],
 input[type="file"] {
-  padding: 8px 12px;
+  height: 38px;
+  padding: 0 12px;
   border: 1px solid var(--border);
   border-radius: 0;
   font-family: 'Roboto Mono', monospace;
