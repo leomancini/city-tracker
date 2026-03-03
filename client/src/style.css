@@ -96,7 +96,7 @@ button, a {
 
 /* Cards */
 .card {
-  padding: 20px 0;
+  padding: 12px 0;
   margin-bottom: 0;
 }
 
@@ -155,6 +155,12 @@ button, a {
   background: var(--text-bright);
   border-color: var(--text-bright);
   color: #000;
+}
+
+.btn-secondary:active {
+  background: transparent;
+  border-color: var(--text-bright);
+  color: var(--text-bright);
 }
 
 .btn-icon {
@@ -223,11 +229,11 @@ input[type="file"] {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 32px 0 20px;
+  padding: 32px 0 12px;
   gap: 16px;
   flex-wrap: wrap;
   border-bottom: 1px solid var(--border);
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
 
 .page-header h1 {
@@ -245,7 +251,11 @@ input[type="file"] {
   margin-top: 4px;
 }
 
-.page-header > .btn,
+.back-btn {
+  margin-top: 24px;
+  margin-bottom: -12px;
+}
+
 .page-actions {
   margin-top: 6px;
 }
@@ -299,11 +309,10 @@ input[type="file"] {
 }
 
 .typeahead-input {
-  font-size: 15px !important;
-  padding: 12px 0 !important;
+  font-size: 14px !important;
+  padding: 8px 12px !important;
   background: transparent !important;
-  border: none !important;
-  border-bottom: 1px solid var(--border) !important;
+  border: 1px solid var(--border) !important;
   border-radius: 0 !important;
 }
 
@@ -576,7 +585,9 @@ input[type="file"] {
 
   .page-header {
     flex-direction: column;
-    padding: 20px 0 16px;
+    padding: 20px 0 8px;
+    border-bottom: none;
+    margin-bottom: 0;
   }
 
   .page-actions {

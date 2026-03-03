@@ -41,9 +41,9 @@ export default function AddCity() {
 
   return (
     <div>
+      <Link to={`/${username}`} className="btn btn-secondary back-btn">Back</Link>
       <div className="page-header">
         <h1>Add Cities</h1>
-        <Link to={`/${username}`} className="btn btn-secondary">Back to Profile</Link>
       </div>
 
       <section className="card">

@@ -53,8 +53,8 @@ export default function UserCities() {
           <p className="subtitle">{data?.totalCities || 0} cities visited</p>
         </div>
         <div className="page-actions">
-          <Link to={`/${username}/add`} className="btn">Add Cities</Link>
-          <Link to={`/${username}/import`} className="btn btn-secondary">Import KML</Link>
+          <Link to={`/${username}/add`} className="btn btn-secondary">Add</Link>
+          <Link to={`/${username}/import`} className="btn btn-secondary">Import</Link>
         </div>
       </div>
       <CityGroupedList data={data} onRemove={handleRemove} />
