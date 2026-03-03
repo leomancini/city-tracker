@@ -62,7 +62,6 @@ export default function ImportKml() {
       </div>
 
       <section className="card">
-        <p>Upload a KML file exported from Google My Maps to import cities.</p>
         <input type="file" accept=".kml,.kmz" onChange={handleUpload} disabled={uploading} />
         {uploading && <p>Processing file...</p>}
         {error && <p className="error">{error}</p>}
