@@ -57,8 +57,8 @@ router.post('/:username/cities', async (req, res) => {
   const user = await getUser(req.params.username);
   if (!user) return res.status(404).json({ error: 'User not found' });
 
-  const { cityId } = req.body;
-  if (!cityId) return res.status(400).json({ error: 'cityId is required' });
+  const cityId = Number(req.body.cityId);
+  if (!cityId || !Number.isFinite(cityId)) return res.status(400).json({ error: 'cityId must be a valid number' });
 
   let city = getCityById(cityId);
   if (!city) {

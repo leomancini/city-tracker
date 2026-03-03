@@ -27,7 +27,9 @@ router.post('/:username/import/confirm', async (req, res) => {
   const existingIds = new Set(user.cities.map(c => c.cityId));
   let added = 0;
 
-  for (const cityId of cityIds) {
+  for (const rawId of cityIds) {
+    const cityId = Number(rawId);
+    if (!cityId || !Number.isFinite(cityId)) continue;
     if (existingIds.has(cityId)) continue;
     if (!getCityById(cityId)) continue;
     user.cities.push({ cityId, addedAt: new Date().toISOString(), note: '' });
