@@ -49,6 +49,8 @@ export default function Home() {
             required
             autoComplete="off"
             data-1p-ignore
+            data-lpignore="true"
+            data-form-type="other"
           />
           <button type="submit" className="btn">Go</button>
         </form>
