@@ -26,3 +26,4 @@ jobs:
         run: |
           git remote add dreamcompute-leo leo@root.noshado.ws:/home/leo/services/city-tracker
           git push dreamcompute-leo main
+
