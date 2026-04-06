@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
@@ -26,4 +26,3 @@ jobs:
         run: |
           git remote add dreamcompute-leo leo@root.noshado.ws:/home/leo/services/city-tracker
           git push dreamcompute-leo main
-
