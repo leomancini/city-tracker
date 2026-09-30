@@ -55,6 +55,7 @@ export default function UserCities() {
         <div className="page-actions">
           <Link to={`/${username}/add`} className="btn btn-secondary">Add</Link>
           <Link to={`/${username}/import`} className="btn btn-secondary">Import</Link>
+          <Link to={`/${username}/sync`} className="btn btn-secondary">Sync</Link>
         </div>
       </div>
       <CityGroupedList data={data} onRemove={handleRemove} />

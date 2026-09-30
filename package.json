@@ -8,7 +8,8 @@
     "start": "node --env-file=.env /home/leo/services/city-tracker/server.js",
     "dev": "concurrently \"nodemon --ignore data/users/ --ignore client/ --ignore client-dist/ --exec 'node --env-file=.env' server.js\" \"cd client && npm run dev\"",
     "build": "cd client && npm run build",
-    "build:db": "node scripts/build-db.js"
+    "build:db": "node scripts/build-db.js",
+    "sync:mymaps": "node --env-file=.env scripts/sync-my-maps.js"
   },
   "author": "",
   "license": "ISC",

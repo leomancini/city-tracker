@@ -60,3 +60,27 @@ export function confirmImport(username, cityIds) {
     body: JSON.stringify({ cityIds }),
   });
 }
+
+export function getSyncSource(username) {
+  return request(`/users/${encodeURIComponent(username)}/sync-source`);
+}
+
+export function setSyncSource(username, url) {
+  return request(`/users/${encodeURIComponent(username)}/sync-source`, {
+    method: 'PUT',
+    body: JSON.stringify({ url }),
+  });
+}
+
+export function clearSyncSource(username) {
+  return request(`/users/${encodeURIComponent(username)}/sync-source`, {
+    method: 'DELETE',
+  });
+}
+
+export function syncFromMyMaps(username, { dryRun = false } = {}) {
+  return request(`/users/${encodeURIComponent(username)}/sync`, {
+    method: 'POST',
+    body: JSON.stringify({ dryRun }),
+  });
+}
